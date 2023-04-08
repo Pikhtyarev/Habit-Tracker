@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    font-weight: 400;
+}
+
+.app {
+    display: flex;
+    background: #ebfffe;
+}
+
+/* ЛЕВАЯ ЧАСТЬ */
+
+    .panel {
+        min-height: 100vh;
+        padding: 30px;
+        background: white;
+    }
+
+    .logo {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 70px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .menu__list {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .menu__item {
+        background: white;
+        border: none;
+        height: 70px;
+        width: 70px;
+        cursor: pointer;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px #004f5d;
+    }
+
+    .menu__item:hover {
+        background: #0d988c;
+    }
+
+    .menu__item:hover img {
+        filter: invert(1);
+    }
+
+    .menu__item_active {
+        background: #004f5d;
+    }
+
+    .menu__item_active img {
+        filter: invert(1);
+    }
+
+    .menu__add {
+        margin-top: 50px;
+        background: white;
+        border: none;
+        height: 70px;
+        width: 70px;
+        cursor: pointer;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px #004f5d;
+    }
+
+    .menu__add:hover {
+        background: #004f5d;
+    }
+
+    .menu__add:hover img {
+        filter: invert(1);
+    }
+
+/* КОНЕЦ ЛЕВАЯ ЧАСТЬ */
+
+/* ПРАВАЯ ЧАСТЬ */
+
+    .content {
+        min-width: 900px;
+        padding: 25px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    main {
+        margin-top: 35px;
+    }
+
+    .progress {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 250px;
+    }
+
+    .progress__text {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .progress__bar {
+        width: 100%;
+        height: 10px;
+        background: #dadada;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    .progress__cover-bar {
+        position: absolute;
+        height: 10px;
+        background: #004f5d;
+        border-radius: 4px;
+        transition: all 0.5s;
+    }
+
+    .habit {
+        font-size: 22px;
+        background: white;
+        border-radius: 15px;
+        display: flex;
+        border: 2px solid #0d988c;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .habit__day {
+        padding: 20px 40px;
+        border-radius: 15px 0 0 15px;
+        border-right: 10px solid #ebfffe;
+        min-width: 165px;
+    }
+
+    .habit__comment {
+        padding: 20px 40px;
+    }
+
+    .habit__delete {
+        margin-left: auto;
+        margin-right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        padding: 6px;
+    }
+
+    .habit__delete:hover {
+        background: #004f5d;
+    }
+
+    .habit__delete:hover img {
+        filter: invert(1);
+    }
+
+    input {
+        font-family: 'Ubuntu', sans-serif;
+        background: white;
+        border: none;
+        padding: 12px 20px;
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    input.error {
+        border: 2px solid red;
+    }
+
+    .habit__form {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        padding: 0 10px 0 10px;
+        position: relative;
+    }
+
+    .input_icon {
+        padding-left: 37px;
+    }
+
+    .input__icon {
+        position: absolute;
+        top: 9px;
+        left: 18px;
+    }
+
+    button {
+        margin-left: auto;
+        background: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        padding: 6px;
+    }
+
+    button:hover {
+        background: #004f5d;
+        color: white;
+    }
+
+/* КОНЕЦ ПРАВАЯ ЧАСТЬ */
+
+/* ПОПАП */
+    .cover {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cover_hidden {
+        display: none;
+    }
+
+    .popup {
+        width: 100%;
+        background: white;
+        border-radius: 15px;
+        max-width: 700px;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popup__close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .icon-select {
+        display: flex;
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .icon {
+        margin-bottom: 20px;
+        background: white;
+        border: none;
+        height: 70px;
+        width: 70px;
+        cursor: pointer;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon:hover {
+        background: #0d988c;
+    }
+
+    .icon:hover img {
+        filter: invert(1);
+    }
+
+    .icon_active {
+        background: #004f5d;
+    }
+
+    .icon_active img {
+        filter: invert(1);
+    }
+
+    .popup__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .button-add {
+        background-color: #0d988c;
+        color: white;
+        padding: 15px;
+    }
